@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>結果</title>
+</head>
+<body>
+■税抜き価格<br><span th:text="${application.tax_off}"></span><br>
+■税込価格<br><span th:text="${application.tax_on}"></span>
+<a href= "exam02-result2.html"
+th:href = "@{/exam02/page2}" >
+次へ</a>
+</body>
+</html>
