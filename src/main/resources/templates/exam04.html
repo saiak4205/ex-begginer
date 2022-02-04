@@ -6,11 +6,14 @@
 </head>
 <body>
 <form action = "exam04-result.html"
-th:action = "@{/exam04/check}" method = "post">
-名前：<input type = "text" name ="name"><br>
-年齢：<input type = "text" name ="age"><br>
+th:action = "@{/exam04/check}" th:object = "${userForm}" method = "post">
+<div th:errors = "*{name}" style ="color:red">エラー！</div>
+名前：<input type = "text" name ="name" th:field = "*{name}"><br>
+<div th:errors = "*{age}" style ="color:red">エラー！</div>
+年齢：<input type = "text" name ="age" th:field = "*{age}"><br>
+<div th:errors = "*{comment}" style ="color:red">エラー！</div>
 コメント：<br>
-<textarea name = "comment" row ="4" cols = "30"></textarea><br>
+<textarea name = "comment" rows ="4" cols = "30" th:field = "*{comment}"></textarea><br>
 <button>登録</button>
 </form>
 </body>
